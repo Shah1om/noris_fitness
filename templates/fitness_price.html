@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Прайс - Фитнес-зал{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5">Прайс-лист на услуги фитнес-зала</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+            <tr><th>Наименование процедуры</th><th>Цена, руб</th></tr>
+            </thead>
+            <tbody>
+            <tr><td colspan="2" class="table-secondary"><strong>Абонемент "ГРУППА ЗДОРОВЬЯ" (10:00 - 13:00)</strong></td></tr>
+            {% for item in price.health_group %}<tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>{% endfor %}
+            <tr><td colspan="2" class="table-secondary"><strong>Абонемент "СТУДЕНЧЕСКИЙ" (8:00 - 22:00)</strong></td></tr>
+            {% for item in price.student %}<tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>{% endfor %}
+            <tr><td colspan="2" class="table-secondary"><strong>Абонемент "ДНЕВНОЙ" (10:00 - 16:00)</strong></td></tr>
+            {% for item in price.daytime %}<tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>{% endfor %}
+            <tr><td colspan="2" class="table-secondary"><strong>Абонемент "УНИВЕРСАЛЬНЫЙ" (08:00 - 22:00)</strong></td></tr>
+            {% for item in price.universal %}<tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>{% endfor %}
+            <tr><td colspan="2" class="table-secondary"><strong>Абонемент "ВЫХОДНОЙ ДЕНЬ" (10:00 - 17:00)</strong></td></tr>
+            {% for item in price.weekend %}<tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>{% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

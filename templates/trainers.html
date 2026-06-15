@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Тренеры - НОРИС Фитнес{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5" data-aos="fade-up">Наши тренеры</h1>
+    <div class="row g-4">
+        {% for trainer in trainers %}
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            <div class="card h-100 text-center border-0 shadow-sm trainer-card">
+                <img src="{{ trainer.photo }}" class="card-img-top rounded-circle mx-auto mt-4" style="width: 150px; height: 150px; object-fit: cover;" alt="{{ trainer.name }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ trainer.name }}</h4>
+                    <h6 class="text-danger">{{ trainer.specialization }}</h6>
+                    <p class="card-text text-muted mt-3">{{ trainer.achievements }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Дополнительная информация о тренерах -->
+    <div class="mt-5 p-4 bg-light rounded-4" data-aos="fade-up">
+        <h3 class="text-center">Опытные инструкторы фитнес-зала</h3>
+        <p class="text-center">Наши тренеры помогут вам достичь любой цели: похудение, набор мышечной массы, коррекция фигуры, подготовка к соревнованиям. Каждый инструктор имеет профильное образование и регулярно повышает квалификацию.</p>
+    </div>
+</div>
+{% endblock %}

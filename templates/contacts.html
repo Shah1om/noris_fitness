@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Контакты</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Наш адрес</h4>
+            <p><i class="fas fa-map-marker-alt text-danger me-2"></i>453100, Республика Башкортостан, г. Стерлитамак, ул. Коммунистическая, 84</p>
+            <h4 class="mt-4">Телефоны</h4>
+            <p><i class="fas fa-phone text-danger me-2"></i>+7 (3473) 22-40-44</p>
+            <p><i class="fas fa-mobile-alt text-danger me-2"></i>+7 (965) 64-44-786</p>
+            <p><i class="fas fa-phone text-danger me-2"></i>8-987-138-20-55</p>
+            <h4 class="mt-4">E-mail</h4>
+            <p><i class="fas fa-envelope text-danger me-2"></i>socnoris@mail.ru</p>
+            <h4 class="mt-4">Режим работы</h4>
+            <p><i class="fas fa-clock text-danger me-2"></i>пн.-пт. 10:00 - 22:00</p>
+            <p><i class="fas fa-clock text-danger me-2"></i>сб. 10:00 - 20:00</p>
+            <p><i class="fas fa-clock text-danger me-2"></i>вс. выходной</p>
+        </div>
+        <div class="col-md-6">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1&source=constructor" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

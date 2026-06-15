@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Главная - НОРИС Фитнес{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-white text-center d-flex align-items-center" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; min-height: 500px;">
+    <div class="container">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Фитнес-центр НОРИС в Стерлитамаке</h1>
+        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">Сегодня быть здоровым модно и престижно! Фитнес-центр НОРИС поможет в этом. Различные программы тренировок укрепят ваше здоровье и физическую форму, снимут напряжение и поднимут настроение!</p>
+        <a href="#advantages" class="btn btn-danger btn-lg mt-4" data-aos="fade-up" data-aos-delay="400">Узнать больше</a>
+    </div>
+</section>
+
+<!-- Преимущества -->
+<section id="advantages" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Почему выбирают НОРИС</h2>
+        <div class="row g-4">
+            {% for adv in advantages %}
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="card h-100 text-center border-0 shadow-sm advantage-card">
+                    <div class="card-body">
+                        <h4 class="card-title mt-3">{{ adv.title }}</h4>
+                        <p class="card-text text-muted">{{ adv.desc }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Слайдер акций и новостей -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-up">Акции и новости</h2>
+        <div id="newsSlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-aos="fade-up">
+            <div class="carousel-inner rounded-4 shadow">
+                {% for slide in slides %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="p-5 text-center" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                        <h3 class="text-white">{{ slide.title }}</h3>
+                        <p class="text-white-50">{{ slide.date }}</p>
+                        <p class="text-white lead">{{ slide.text }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#newsSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#newsSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- О нас + услуги кратко -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4" data-aos="fade-right">
+                <h2>О нас</h2>
+                <p class="lead">Победите себя и откройте дверь фитнес-центра НОРИС! Обретите свое здоровье и красоту!</p>
+                <p>Тренажерный зал оснащен различными видами тренажеров для каждой группы мышц. Путем воздействия на разные группы мышц формируется эстетически привлекательная фигура.</p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        ✓ Персональный тренинг<br>
+                        ✓ Сплит-группы<br>
+                        ✓ Программы тренажерного зала
+                    </div>
+                    <div class="col-6">
+                        ✓ Спортивное питание<br>
+                        ✓ Групповые программы<br>
+                        ✓ SPA-салон
+                    </div>
+                </div>
+                <a href="/about" class="btn btn-outline-danger mt-3">Подробнее о нас</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h4>Записаться на пробное занятие</h4>
+                        <form id="requestForm">
+                            <div class="mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" name="phone" class="form-control" placeholder="Номер телефона" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="message" class="form-control" rows="3" placeholder="Сообщение"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Отправить заявку</button>
+                        </form>
+                        <div id="formMessage" class="mt-3 text-success"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Тренажерный зал и Фитнес-зал -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3>Тренажерный зал</h3>
+                        <p>Стройная фигура, крепкое тело, рельефные мышцы – в фитнес-центре НОРИС Вы добьетесь желаемых целей! Профессиональные тренеры и продуктивные тренировки Вам в этом помогут.</p>
+                        <a href="/personal-training" class="btn btn-danger">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3>Фитнес-зал</h3>
+                        <p>Разнообразные фитнес-программы под музыку в группах дарят Вам радость общения и хорошую физическую форму. Фитнес-инструкторы подберут наиболее эффективные тренировки.</p>
+                        <a href="/group-programs" class="btn btn-danger">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

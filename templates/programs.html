@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Программы тренажерного зала{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Программы тренажерного зала</h1>
+    <div class="row">
+        {% for program in programs %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>{{ program.title }}</h4>
+                    <p>{{ program.desc }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

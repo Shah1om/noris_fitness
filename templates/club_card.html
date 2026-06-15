@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Получить клубную карту{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Получить клубную карту</h1>
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="text-center mb-4">Заявка на оформление клубной карты</h4>
+                    <form id="clubCardForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Номер телефона" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="E-mail">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option>Выберите тип абонемента</option>
+                                <option>Безлимитный - 2100 руб/мес</option>
+                                <option>Годовая Клубная Карта - 15000 руб</option>
+                                <option>Универсальный - от 1250 руб/8 тренировок</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

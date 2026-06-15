@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Прайс-лист{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5">Прайс-лист на услуги</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+            <tr><th>Наименование процедуры</th><th>Цена, руб</th></tr>
+            </thead>
+            <tbody>
+            <tr class="table-secondary"><td colspan="2"><strong>Абонемент "ПЕРСОНАЛЬНЫЙ" (08:00 - 22:00)</strong></td></tr>
+            {% for item in price.personal %}
+            <tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>
+            {% endfor %}
+            <tr class="table-secondary"><td colspan="2"><strong>Абонемент "СПЛИТ - группа"</strong></td></tr>
+            {% for item in price.split %}
+            <tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>
+            {% endfor %}
+            <tr class="table-secondary"><td colspan="2"><strong>Абонемент "БЕЗЛИМИТНЫЙ"</strong></td></tr>
+            {% for item in price.limitless %}
+            <tr><td>{{ item[0] }}</td><td>{{ item[1] }}</td></tr>
+            {% endfor %}
+            <tr><td>Годовая Клубная Карта</td><td>15000</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

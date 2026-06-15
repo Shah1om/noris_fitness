@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Расписание - НОРИС Фитнес{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5" data-aos="fade-up">Расписание занятий</h1>
+
+    <div class="row" data-aos="fade-up">
+        <div class="col-12">
+            <ul class="nav nav-tabs justify-content-center mb-4" id="scheduleTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#monday">Понедельник</button>
+                </li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tuesday">Вторник</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#wednesday">Среда</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#thursday">Четверг</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#friday">Пятница</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#saturday">Суббота</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sunday">Воскресенье</button></li>
+            </ul>
+
+            <div class="tab-content">
+                {% for day, classes in schedule.items() %}
+                <div class="tab-pane fade {% if day == 'monday' %}show active{% endif %}" id="{{ day }}">
+                    <div class="list-group">
+                        {% for class in classes %}
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{{ class }}</span>
+                            <span class="badge bg-danger rounded-pill">Запись</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Дополнительная информация -->
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-md-6">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h4>Индивидуальные программы</h4>
+                    <p>Возможны тренировки в удобное для вас время по всем направлениям. Подберем нагрузку под ваш уровень подготовки.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-warning">
+                <div class="card-body">
+                    <h4>Абонементы</h4>
+                    <p>Безлимитный - 2100₽/мес, Персональный - от 2650₽ за 8 тренировок, Студенческий - от 1000₽, Школьный - 700₽.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

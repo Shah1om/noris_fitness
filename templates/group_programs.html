@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Групповые программы{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Групповые программы</h1>
+    <p class="text-center mb-5">Групповые программы – это занятия фитнесом в группах под музыку. Все групповые фитнес программы для женщин и мужчин делятся по уровню сложности и нагрузке: начальной, средней, высокий уровни.</p>
+    <div class="row">
+        {% for program in programs %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>{{ program.name }}</h4>
+                    <p>{{ program.desc }}</p>
+                    <p class="text-muted"><strong>Время:</strong> {{ program.time }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

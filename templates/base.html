@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НОРИС Фитнес - {% block title %}Фитнес центр в Стерлитамаке{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<!-- Top Bar -->
+<div class="top-bar bg-dark text-white py-2 d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <i class="fas fa-map-marker-alt me-2"></i>453100, г. Стерлитамак, ул. Коммунистическая, 84
+            </div>
+            <div class="col-md-6 text-end">
+                <i class="fas fa-clock me-2"></i>пн.-пт. 10:00-22:00, сб. 10:00-20:00, вс. выходной
+                <span class="mx-2">|</span>
+                <i class="fas fa-phone me-2"></i>8-987-138-20-55
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">
+            НОРИС Фитнес
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">О нас</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/about">О нас</a></li>
+                        <li><a class="dropdown-item" href="/team">Команда</a></li>
+                        <li><a class="dropdown-item" href="/documents">Правовые документы</a></li>
+                        <li><a class="dropdown-item" href="/vacancies">Вакансии</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Тренажерный зал</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/personal-training">Персональный тренинг</a></li>
+                        <li><a class="dropdown-item" href="/split-group">Сплит-группа</a></li>
+                        <li><a class="dropdown-item" href="/programs">Программы</a></li>
+                        <li><a class="dropdown-item" href="/sports-nutrition">Спортивное питание</a></li>
+                        <li><a class="dropdown-item" href="/trainers">Тренеры</a></li>
+                        <li><a class="dropdown-item" href="/price">Прайс</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Фитнес-зал</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/group-programs">Групповые программы</a></li>
+                        <li><a class="dropdown-item" href="/individual-programs">Индивидуальные программы</a></li>
+                        <li><a class="dropdown-item" href="/fitness-instructors">Фитнес-инструкторы</a></li>
+                        <li><a class="dropdown-item" href="/fitness-programs">Программы фитнес-зала</a></li>
+                        <li><a class="dropdown-item" href="/fitness-price">Прайс</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">СПА-салон</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/apparat-cosmetology">Аппаратная косметология</a></li>
+                        <li><a class="dropdown-item" href="/thalassotherapy">Талассотерапия</a></li>
+                        <li><a class="dropdown-item" href="/thermal-procedures">Термальные процедуры</a></li>
+                        <li><a class="dropdown-item" href="/spa-programs">SPA-программы</a></li>
+                        <li><a class="dropdown-item" href="/massage">Массаж</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="/news">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contacts">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="/reviews">Отзывы</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Контент страницы -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>НОРИС Фитнес</h5>
+                <p>Поможем обрести здоровье и красоту!</p>
+                <div class="social-links">
+                    <a href="#" class="text-white me-2"><i class="fab fa-vk fa-lg"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h5>О нас</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/about" class="text-white-50 text-decoration-none">О нас</a></li>
+                    <li><a href="/documents" class="text-white-50 text-decoration-none">Правовые документы</a></li>
+                    <li><a href="/news" class="text-white-50 text-decoration-none">Новости</a></li>
+                    <li><a href="/vacancies" class="text-white-50 text-decoration-none">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Услуги</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/personal-training" class="text-white-50 text-decoration-none">Персональный тренинг</a></li>
+                    <li><a href="/split-group" class="text-white-50 text-decoration-none">Сплит-группа</a></li>
+                    <li><a href="/programs" class="text-white-50 text-decoration-none">Программы</a></li>
+                    <li><a href="/massage" class="text-white-50 text-decoration-none">Расслабляющий массаж</a></li>
+                    <li><a href="/spa-programs" class="text-white-50 text-decoration-none">SPA-салон</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Контакты</h5>
+                <p><i class="fas fa-map-marker-alt me-2"></i>ул. Коммунистическая, 84</p>
+                <p><i class="fas fa-phone me-2"></i>8-987-138-20-55</p>
+                <p><i class="fas fa-envelope me-2"></i>socnoris@mail.ru</p>
+                <a href="/club-card" class="btn btn-outline-danger btn-sm mt-2">Получить клубную карту</a>
+            </div>
+        </div>
+        <hr class="bg-secondary">
+        <div class="text-center">
+            <p class="mb-0">2015-2025 © НОРИС Фитнес центр</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

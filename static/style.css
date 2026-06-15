@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-section {
+    background-attachment: fixed;
+}
+
+.advantage-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1) !important;
+}
+
+.trainer-card {
+    transition: all 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.nav-tabs .nav-link {
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-tabs .nav-link.active {
+    color: #dc3545;
+    border-bottom: 2px solid #dc3545;
+}
+
+.list-group-item {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+}
+
+footer a:hover {
+    color: #dc3545 !important;
+    transition: color 0.2s;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    background-color: #212529;
+    border: none;
+    border-radius: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+}
+
+table {
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 12px;
+}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Команда{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-5">Наша команда</h1>
+
+    <h2 class="mb-4">Тренеры тренажерного зала</h2>
+    <div class="row mb-5">
+        {% for trainer in gym_trainers %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>{{ trainer.name }}</h4>
+                    <h6 class="text-danger">{{ trainer.specialization }}</h6>
+                    <p class="mt-3">{{ trainer.achievements }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="mb-4">Тренеры фитнес-зала</h2>
+    <div class="row">
+        {% for trainer in fitness_trainers %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>{{ trainer.name }}</h4>
+                    <h6 class="text-danger">{{ trainer.specialization }}</h6>
+                    <p class="mt-3">{{ trainer.achievements }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
